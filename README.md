@@ -20,7 +20,7 @@
 
 |column|type|options|
 |------|----|-------|
-|group_name|string|
+|group_name|string|null: false|
 
 ## Association
 - has_many :messages
