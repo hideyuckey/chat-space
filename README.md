@@ -33,8 +33,8 @@
 
 |column|type|options|
 |------|----|-------|
-|body|text|---------|
-|image|string|------|
+|body|text|
+|image|string|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
