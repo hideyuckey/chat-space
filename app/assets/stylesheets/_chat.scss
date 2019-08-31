@@ -1,0 +1,19 @@
+.chat {
+  padding: 20px 40px;
+  &__name {
+    float: left;
+    color: $chat-main-color;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  &__date {
+    float: left;
+    color: $chat-sub-color;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  &__text {
+    clear: both;
+  }
+}

@@ -1,0 +1,29 @@
+.header {
+  background-color: $chat-blue;
+  height: 25px;
+  width: 100vw;
+  color: $chat-white;
+  text-align: center;
+  line-height: 25px;
+}
+
+.side-bar{
+  float: left;
+  background-color: #2f3e51;
+  width: 300px;
+  height: 100vh;
+}
+
+.chat-main{
+  background-color: #fafafa;
+  float: right;
+  width: calc(100vw - 300px);
+  height: calc(100vh - 90px);
+}
+
+.form-box {
+  background-color: #cfcdcd;
+  float: right;
+  height: 90px;
+  width: calc(100vw - 300px);
+}
