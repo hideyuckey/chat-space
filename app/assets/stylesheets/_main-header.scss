@@ -1,8 +1,7 @@
-.main-top {
+.main-header {
   height: 100px;
   border-bottom: solid 1px #eeeeee;
   padding: 0 40px;
-  margin-bottom: 26px;
   position: relative;
   &__group-name {
     float: left;
@@ -22,11 +21,10 @@
     height:40px;
     line-height: 40px;
     color: $chat-blue;
-    font-weight: bold;
     padding: 0 20px;
     border: solid 1px $chat-blue;
     position: absolute;
     top: 28px;
-    right: 60px;
+    right: 40px;
   }
 }

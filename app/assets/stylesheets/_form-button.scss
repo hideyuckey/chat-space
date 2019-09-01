@@ -2,11 +2,10 @@
   float: left;
   background-color: $chat-blue;
   height: 50px;
-  width: 90px;
+  width: 100px;
   margin: 20px 40px 20px 0;
     &__send {
     color: $chat-white;
-    font-weight: bold;
     line-height: 50px;
     text-align: center;
   }

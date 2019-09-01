@@ -1,5 +1,5 @@
 .chat {
-  padding: 20px 40px;
+  margin: 20px 0;
   &__name {
     float: left;
     color: $chat-main-color;
@@ -15,5 +15,7 @@
   }
   &__text {
     clear: both;
+    color: $chat-main-color;
+    font-size: 14px;
   }
 }
