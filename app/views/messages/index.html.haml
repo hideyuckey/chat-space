@@ -17,13 +17,11 @@
     .main-header__edit-button Edit
   .chat-main__chat-list
     = render partial: "chat"
-  .chat-main__form-box
-    .form
-      .form__text-area type a message
-      .form__image
-        %form{:method => "post"}
-        %label
-          %i.fa.fa-image
-          %input#send-image{:name => "file", :style => "display:none", :type => "file"}
-    .form-button
-      .form-button__send Send
+  .chat-main__input-box
+    .input
+      %form{method: "post"}
+        %input{placeholder: "type a message", class: "input__text"}
+          %label
+            %i.fa.fa-image{class: "input__image"}
+            %input{name: "file", style: "display:none", type: "file"}
+    %input{type: "submit", value: "Send", class: "submit" }
