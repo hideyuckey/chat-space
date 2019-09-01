@@ -1,0 +1,30 @@
+.contents__header
+  グループを作成しました
+
+.contents__side-bar
+  .user
+    .user__name test-user
+    %li.user__link
+      %i.fa.fa-edit
+      %i.fa.fa-cog
+  .group-list
+    = render partial: "group"
+
+.contents__chat-main
+  .main-top
+    .main-top__group-name test-group
+    .main-top__menber Menber : test-user
+    .main-top__edit-button Edit
+  .chat-list
+    = render partial: "chat"
+    
+.contents__form-box
+  .form
+    .form__text-area type a message
+    .form__image
+      %form{:method => "post"}
+      %label
+        %i.fa.fa-image
+        %input#send-image{:name => "file", :style => "display:none", :type => "file"}
+  .form-button
+    .form-button__send Send
