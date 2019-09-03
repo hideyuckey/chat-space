@@ -1,12 +1,12 @@
-.header
-  グループを作成しました
-
 .side-bar
-  .user
-    .user__name test-user
-    %li.user__link
+  .user-bar
+    .user-bar__name
+      = current_user.name
+    %li.user-bar__link
+      -# =link_to 
       %i.fa.fa-edit
-      %i.fa.fa-cog
+      =link_to edit_user_registration_path do
+        %i.fa.fa-cog
   .group-list
     = render partial: "group"
 
