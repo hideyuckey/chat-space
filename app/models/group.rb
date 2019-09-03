@@ -1,5 +1,5 @@
 class Group < ApplicationRecord
-  has_many :groupusers
-  hasmany :users, through: :group_users
-  varidates :name, presence: true, unique: true
+  has_many :group_users
+  has_many :users, through: :group_users
+  validates :name, presence: true, uniqueness: true
 end
