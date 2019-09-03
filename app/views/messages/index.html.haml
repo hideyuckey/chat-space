@@ -3,11 +3,11 @@
     .user-bar__name
       = current_user.name
     %li.user-bar__link
-      -# =link_to 
-      %i.fa.fa-edit
+      =link_to new_group_path do
+        %i.fa.fa-edit
       =link_to edit_user_registration_path do
         %i.fa.fa-cog
-  .group-list
+  .group-lists
     = render partial: "group"
 
 .chat-main
