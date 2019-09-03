@@ -1,0 +1,30 @@
+.main-header {
+  height: 100px;
+  border-bottom: solid 1px #eeeeee;
+  padding: 0 40px;
+  position: relative;
+  &__group-name {
+    float: left;
+    color: #333333;
+    font-size: 20px;
+    margin-top: 36px;
+  }
+  &__menber {
+    float: left;
+    color: $chat-sub-color;
+    font-size: 12px;
+    margin-top: 15px;
+    clear: both;
+  }
+  &__edit-button {
+    float: right;
+    height:40px;
+    line-height: 40px;
+    color: $chat-blue;
+    padding: 0 20px;
+    border: solid 1px $chat-blue;
+    position: absolute;
+    top: 28px;
+    right: 40px;
+  }
+}

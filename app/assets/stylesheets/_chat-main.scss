@@ -1,0 +1,17 @@
+.chat-main{
+  float: left;
+  width: calc(100vw - 300px);
+  &__chat-list{
+    background-color: #fafafa;
+    height: calc(100vh - 267px);
+    padding: 26px 40px;
+  }
+  &__input-box {
+    display: flex;
+    background-color: #ddd;
+    float: right;
+    height: 50px;
+    padding: 20px 40px;
+    width: calc(100vw - 380px);
+  }
+}

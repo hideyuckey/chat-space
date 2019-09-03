@@ -1,0 +1,19 @@
+.input {
+  height: 50px;
+  width: calc(100% - 115px);
+  position: relative;
+  &__text {
+    font-size: 16px;
+    color: $chat-main-color;
+    height: 50px;
+    width: calc(100% - 55px);
+    border-style: none;
+    padding: 0 40px 0 15px;
+  }
+  &__image {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    font-size: 1.3rem;
+  }
+}

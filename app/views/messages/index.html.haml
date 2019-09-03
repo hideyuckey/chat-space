@@ -1,0 +1,27 @@
+.header
+  グループを作成しました
+
+.side-bar
+  .user
+    .user__name test-user
+    %li.user__link
+      %i.fa.fa-edit
+      %i.fa.fa-cog
+  .group-list
+    = render partial: "group"
+
+.chat-main
+  .main-header
+    .main-header__group-name test-group
+    .main-header__menber Menber : test-user
+    .main-header__edit-button Edit
+  .chat-main__chat-list
+    = render partial: "chat"
+  .chat-main__input-box
+    .input
+      %form{method: "post"}
+        %input{placeholder: "type a message", class: "input__text"}
+          %label
+            %i.fa.fa-image{class: "input__image"}
+            %input{name: "file", style: "display:none", type: "file"}
+    %input{type: "submit", value: "Send", class: "submit" }

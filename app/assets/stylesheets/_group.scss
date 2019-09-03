@@ -1,0 +1,11 @@
+.group {
+  color: $chat-white;
+  padding: 20px;
+  &__name {
+    font-size: 15px;
+  }
+  &__new-chat {
+    font-size: 11px;
+    margin-top: 5px;
+  }
+}
