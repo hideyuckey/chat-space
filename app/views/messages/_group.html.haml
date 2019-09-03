@@ -1,4 +1,7 @@
-.group-list
-
-  .group-list__name test-group
-  .group-list__new-chat test-coment
+- current_user.groups.each do |group|
+  = link_to "#", class: "group-list__link" do
+    .group-list
+      .group-list__name
+        = group.name
+      .group-list__new-chat
+        メッセージはまだありません

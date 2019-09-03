@@ -3,9 +3,9 @@
     .user-bar__name
       = current_user.name
     %li.user-bar__link
-      =link_to new_group_path do
+      =link_to new_group_path, class: "user-bar__link_icon" do
         %i.fa.fa-edit
-      =link_to edit_user_registration_path do
+      =link_to edit_user_registration_path, class: "user-bar__link_icon" do
         %i.fa.fa-cog
   .group-lists
     = render partial: "group"

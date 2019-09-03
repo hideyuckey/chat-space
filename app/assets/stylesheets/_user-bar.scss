@@ -13,5 +13,8 @@
     float: right;
     list-style: none;
     font-size: 1.1rem;
+    &_icon {
+      text-decoration: none;
+    }
   }
 }
