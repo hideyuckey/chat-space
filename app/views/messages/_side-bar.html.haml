@@ -1,0 +1,16 @@
+.user-bar
+  .user-bar__name
+    = current_user.name
+  %li.user-bar__link
+    =link_to new_group_path, class: "user-bar__link_icon" do
+      %i.fa.fa-edit
+    =link_to edit_user_registration_path, class: "user-bar__link_icon" do
+      %i.fa.fa-cog
+.group-lists
+  - current_user.groups.each do |group|
+    = link_to "group_messages_path(group)", class: "group-list__link" do
+      .group-list
+        .group-list__name
+          = group.name
+        .group-list__new-chat
+          メッセージはまだありません

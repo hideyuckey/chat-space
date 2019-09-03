@@ -1,14 +1,5 @@
 .side-bar
-  .user-bar
-    .user-bar__name
-      = current_user.name
-    %li.user-bar__link
-      =link_to new_group_path, class: "user-bar__link_icon" do
-        %i.fa.fa-edit
-      =link_to edit_user_registration_path, class: "user-bar__link_icon" do
-        %i.fa.fa-cog
-  .group-lists
-    = render partial: "group"
+  = render "side-bar"
 
 .chat-main
   .main-header
@@ -16,7 +7,10 @@
     .main-header__menber Menber : test-user
     .main-header__edit-button Edit
   .chat-main__chat-list
-    = render partial: "chat"
+    .chat
+      .chat__name test-user
+      .chat__date 2019/8/31(sat)12:00:00
+      .chat__text こんにちは！
   .chat-main__input-box
     .input
       %form{method: "post"}
