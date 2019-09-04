@@ -5,6 +5,7 @@
     background-color: #fafafa;
     height: calc(100vh - 242px);
     padding: 26px 40px;
+    overflow: scroll;
   }
   &__input-box {
     display: flex;

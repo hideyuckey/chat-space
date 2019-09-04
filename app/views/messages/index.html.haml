@@ -7,10 +7,7 @@
     .main-header__menber Menber : test-user
     .main-header__edit-button Edit
   .chat-main__chat-list
-    .chat
-      .chat__name test-user
-      .chat__date 2019/8/31(sat)12:00:00
-      .chat__text こんにちは！
+    = render "messages"
   .chat-main__input-box
     .input
       = form_for [@group, @message] do |f|
@@ -20,4 +17,3 @@
             = fa_icon "image", class: "input__image__icon"
             = f.file_field :image, class: "input__image__hiden"
         = f.submit "Send", class: "input__submit"
-        
