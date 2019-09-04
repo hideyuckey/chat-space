@@ -13,9 +13,10 @@
       .chat__text こんにちは！
   .chat-main__input-box
     .input
-      %form{method: "post"}
-        %input{placeholder: "type a message", class: "input__text"}
-          %label
-            %i.fa.fa-image{class: "input__image"}
-            %input{name: "file", style: "display:none", type: "file"}
-    %input{type: "submit", value: "Send", class: "submit" }
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: "input__text", placeholder: "type a message"
+        .input__image
+          = f.label :image do
+            = fa_icon "image", class: "input__image__icon"
+            = f.file_field :image, class: "input__image__hiden"
+        = f.submit "Send", class: "input__submit"
