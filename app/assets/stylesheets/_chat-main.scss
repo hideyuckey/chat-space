@@ -3,8 +3,8 @@
   width: calc(100vw - 300px);
   &__chat-list{
     background-color: #fafafa;
-    height: calc(100vh - 242px);
-    padding: 26px 40px;
+    height: calc(100vh - 282px);
+    padding: 46px 40px;
     overflow: scroll;
   }
   &__input-box {
@@ -15,8 +15,4 @@
     padding: 20px 40px;
     width: calc(100vw - 380px);
   }
-}
-
-body{
-  a:visited { color:white; text-decoration:none }
 }

@@ -3,11 +3,18 @@
 
 .chat-main
   .main-header
-    .main-header__group-name test-group
-    .main-header__menber Menber : test-user
-    .main-header__edit-button Edit
+    .main-header__group-name
+      = @group.name
+    .main-header__menber
+      .main-header__menber_list Member：
+      .main-header__menber_list
+        - @group.users.each do |user|
+          .main-header__menber_name
+            = user.name
+    .main-header__edit-button
+      = link_to "Edit", edit_group_path(@group), class: "main-header__edit-button_link"
   .chat-main__chat-list
-    = render "messages"
+    = render @messages
   .chat-main__input-box
     .input
       = form_for [@group, @message] do |f|
