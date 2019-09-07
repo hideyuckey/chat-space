@@ -2,8 +2,6 @@ $(function() {
 
   function buildHTML(message){
     let image = (message.image) ? `<img class = 'message__image', src= "${message.image}">` : ""
-    console.log(image)
-    console.log(message.image)  
     let html = `
               <div class = "message">
                 <div class = "message__name">${ message.user_name }</div>
