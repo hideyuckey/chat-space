@@ -1,15 +1,18 @@
 $(function() {
 
   function buildHTML(message){
-      let html = `
-      <div class = "message">
-        <div class = "message__name">${ message.user_name }</div>
-        <div class = "message__date">${ message.updated_at }</div>
-        <div class = "message__text">${ message.content }</div>
-        <img class = "message__image", src = "${message.image}">
-      </div>
-      `
-      return html;
+    let image = (message.image) ? `<img class = 'message__image', src= "${message.image}">` : ""
+    console.log(image)
+    console.log(message.image)  
+    let html = `
+              <div class = "message">
+                <div class = "message__name">${ message.user_name }</div>
+                <div class = "message__date">${ message.updated_at }</div>
+                <div class = "message__text">${ message.content }</div>
+                  ${ image }
+              </div>
+              `
+    return html;
   }
 
 
