@@ -30,10 +30,12 @@ $(function() {
       $(".chat-main__chat-list").append(html)
       $('.chat-main__chat-list').animate({ scrollTop: $('.chat-main__chat-list')[0].scrollHeight });
       $("form")[0].reset();
-      $('.input__submit').attr('disabled', false);
     })
     .fail(function(){
       alert("error");
+
+    })
+    .always(function(){
       $('.input__submit').attr('disabled', false);
     })
   })
