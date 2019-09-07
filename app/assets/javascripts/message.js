@@ -1,16 +1,6 @@
 $(function() {
 
   function buildHTML(message){
-    if (message.image == null) {
-      let html = `
-      <div class = "message">
-        <div class = "message__name">${ message.user_name }</div>
-        <div class = "message__date">${ message.updated_at }</div>
-        <div class = "message__text">${ message.content }</div>
-      </div>
-      `
-      return html;
-    }else {
       let html = `
       <div class = "message">
         <div class = "message__name">${ message.user_name }</div>
@@ -20,7 +10,6 @@ $(function() {
       </div>
       `
       return html;
-    }
   }
 
 
@@ -40,7 +29,7 @@ $(function() {
       let html = buildHTML(data);
       $(".chat-main__chat-list").append(html)
       $('.chat-main__chat-list').animate({ scrollTop: $('.chat-main__chat-list')[0].scrollHeight });
-      $("#new_message").reset();
+      $("form")[0].reset();
       $('.input__submit').attr('disabled', false);
     })
     .fail(function(){
