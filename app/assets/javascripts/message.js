@@ -40,9 +40,9 @@ $(function() {
       let html = buildHTML(data);
       $(".chat-main__chat-list").append(html)
       $('.chat-main__chat-list').animate({ scrollTop: $('.chat-main__chat-list')[0].scrollHeight });
-      $('.input__submit').attr('disabled', false);
       $(".input__text").val('');
       $(".input__image__hiden").val('');
+      $('.input__submit').attr('disabled', false);
     })
     .fail(function(){
       alert("error");
