@@ -1,5 +1,5 @@
 $(function() {
-  
+
   function buildHTML(message){
     let image = (message.image) ? `<img class = 'message__image', src= "${message.image}">` : ""
     let html = `
@@ -33,7 +33,6 @@ $(function() {
     })
     .fail(function(){
       alert("error");
-
     })
     .always(function(){
       $('.input__submit').attr('disabled', false);
