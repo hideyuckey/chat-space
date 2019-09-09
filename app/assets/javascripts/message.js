@@ -3,7 +3,7 @@ $(function() {
   function buildHTML(message){
     let image = (message.image) ? `<img class = 'message__image', src= "${message.image}">` : ""
     let html = `
-              <div class = "message">
+              <div class = "message" data-id =${message.id}>
                 <div class = "message__name">${ message.user_name }</div>
                 <div class = "message__date">${ message.updated_at }</div>
                 <div class = "message__text">${ message.content }</div>
@@ -38,4 +38,21 @@ $(function() {
       $('.input__submit').attr('disabled', false);
     })
   })
+
+  let reloadMessages = function() {
+    last_message_id = $("message").last().data("message-id");
+    $.ajax({
+      url: "/api/messages",
+      type: "GET",
+      dataType: "json",
+      date: {id: last_message_id}
+    })
+    .done(function(messages) {
+      console.log('success');
+    })
+    .fail(function() {
+      console.log('error');
+    });
+  }
+
 })
