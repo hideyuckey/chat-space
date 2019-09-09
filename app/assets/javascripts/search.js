@@ -57,4 +57,7 @@ $(function() {
       }
     })
   });
+  $(".chat-group-user").on("click", ".user-search-remove", function() {
+    $(this).parent().remove();
+  })
 });
