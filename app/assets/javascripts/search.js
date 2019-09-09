@@ -38,6 +38,7 @@ $(function() {
       dataType: "json"
     })
     .done(function(users) {
+      console.log(users)
       $("#user-search-result").empty();
       if (users.length !== 0) {
         users.forEach(function(user) {
@@ -55,6 +56,9 @@ $(function() {
       else {
         appendErrMsgToHTML("一致するユーザーはいません")
       }
+    })
+    .fail(function(){
+      alert("ユーザー検索に失敗しました");
     })
   });
   $(".chat-group-user").on("click", ".user-search-remove", function() {
