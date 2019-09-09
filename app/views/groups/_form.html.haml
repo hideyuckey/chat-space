@@ -10,14 +10,28 @@
       = f.label "グループ名", class: "chat-group-form__label"
     .chat-group-form__field--right
       = f.text_field :name, class: "chat-group-form__input", placeholder: "グループ名を入力してください"
+
   .chat-group-form__field
-    / この部分はインクリメンタルサーチ(ユーザー追加の非同期化)のときに使用します
+    .chat-group-form__field--left
+      = f.label "チャットメンバーを追加", class: "chat-group-form__label"
+    .chat-group-form__field--right
+      .chat-group-form__search
+        = f.text_field :users , class: "chat-group-form__input", id: "user-search-field", placeholder: "追加したいユーザー名を入力してください", value: nil
+    .chat-group-form__field--right
+      #user-search-result
+
   .chat-group-form__field
     .chat-group-form__field--left
       = f.label "チャットメンバー", class: "chat-group-form__label"
     .chat-group-form__field--right
-      = f.collection_check_boxes :user_ids, User.all, :id, :name
-      / この部分はインクリメンタルサーチ(ユーザー追加の非同期化)のときにも使用します
+      #user-search-add
+        - @group.users.each do |user|
+          .chat-group-user
+            %input{name: "group[user_ids][]", type: "hidden", value: user.id}
+            .chat-group-user__name
+              =user.name
+            .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
+
   .chat-group-form__field
     .chat-group-form__field--left
     .chat-group-form__field--right
