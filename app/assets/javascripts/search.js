@@ -56,6 +56,9 @@ $(function() {
         appendErrMsgToHTML("一致するユーザーはいません")
       }
     })
+    .fail(function(){
+      alert("ユーザー検索に失敗しました");
+    })
   });
   $(".chat-group-user").on("click", ".user-search-remove", function() {
     $(this).parent().remove();
