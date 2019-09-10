@@ -3,7 +3,7 @@ $(function() {
   function buildHTML(message){
     let image = (message.image) ? `<img class = 'message__image', src= "${message.image}">` : ""
     let html = `
-              <div class = "message" data-id =${message.id}>
+              <div class = "message" data-message-id =${message.id}>
                 <div class = "message__name">${ message.user_name }</div>
                 <div class = "message__date">${ message.updated_at }</div>
                 <div class = "message__text">${ message.content }</div>
@@ -40,19 +40,29 @@ $(function() {
   })
 
   let reloadMessages = function() {
-    last_message_id = $("message").last().data("message-id");
+    last_message_id = $(".message").last().data("message-id");
     $.ajax({
-      url: "/api/messages",
+      url: "api/messages",
       type: "GET",
       dataType: "json",
-      date: {id: last_message_id}
+      data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log('success');
+      let insertHTML = '';
+      messages.forEach(function(message){
+        insertHTML  = buildHTML(message);
+        return insertHTML
+      })
+      $(".chat-main__chat-list").append(insertHTML);
+      $('.chat-main__chat-list').animate({ scrollTop: $('.chat-main__chat-list')[0].scrollHeight });
     })
     .fail(function() {
-      console.log('error');
+      alert("error");
     });
+  };
+  
+  if (document.URL.match("/messages")){
+    setInterval(reloadMessages, 5000);
   }
 
-})
+});
