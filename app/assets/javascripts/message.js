@@ -57,7 +57,7 @@ $(function() {
       $('.chat-main__chat-list').animate({ scrollTop: $('.chat-main__chat-list')[0].scrollHeight });
     })
     .fail(function() {
-      alert("error");
+      console.log('error');
     });
   };
   
