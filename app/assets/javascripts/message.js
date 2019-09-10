@@ -5,7 +5,7 @@ $(function() {
     let html = `
               <div class = "message" data-message-id =${message.id}>
                 <div class = "message__name">${ message.user_name }</div>
-                <div class = "message__date">${ message.updated_at }</div>
+                <div class = "message__date">${ message.created_at }</div>
                 <div class = "message__text">${ message.content }</div>
                   ${ image }
               </div>
@@ -47,17 +47,17 @@ $(function() {
       dataType: "json",
       data: {id: last_message_id}
     })
-    .done(function(messages) {
+    .done(function(data) {
+      console.log(data)
       let insertHTML = '';
-      messages.forEach(function(message){
+      data.forEach(function(message){
         insertHTML  = buildHTML(message);
-        return insertHTML
+        $(".chat-main__chat-list").append(insertHTML);
+        $('.chat-main__chat-list').animate({ scrollTop: $('.chat-main__chat-list')[0].scrollHeight });
       })
-      $(".chat-main__chat-list").append(insertHTML);
-      $('.chat-main__chat-list').animate({ scrollTop: $('.chat-main__chat-list')[0].scrollHeight });
     })
     .fail(function() {
-      console.log('error');
+      alert("error");
     });
   };
   
