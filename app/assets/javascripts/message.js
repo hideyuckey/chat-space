@@ -26,14 +26,11 @@ $(function() {
       contentType: false
     })
     .done(function(data){
-      console.log(data)
       let html = buildHTML(data);
       $(".chat-main__chat-list").append(html)
       $('.chat-main__chat-list').animate({ scrollTop: $('.chat-main__chat-list')[0].scrollHeight });
       $("form")[0].reset();
-      console.log(data)
       let today = new Date();
-      console.log(today)
     })
     .fail(function(){
       alert("error");
